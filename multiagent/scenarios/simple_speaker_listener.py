@@ -23,6 +23,7 @@ class Scenario(BaseScenario):
         world.agents[0].movable = False
         # listener
         world.agents[1].silent = True
+        world.agents[1].max_speed = 5
         # add landmarks
         world.landmarks = [Landmark() for i in range(num_landmarks)]
         for i, landmark in enumerate(world.landmarks):
