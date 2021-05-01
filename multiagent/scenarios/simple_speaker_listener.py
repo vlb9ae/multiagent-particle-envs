@@ -9,10 +9,10 @@ class Scenario(BaseScenario):
         world.dim_c = 3
         num_landmarks = 3
         world.collaborative = True
-        world.max_x = 2
-        world.max_y = 2
-        world.min_x = -2
-        world.min_y = -2
+        world.max_x = 1
+        world.max_y = 1
+        world.min_x = -1
+        world.min_y = -1
         # add agents
         world.agents = [Agent() for i in range(2)]
         for i, agent in enumerate(world.agents):
