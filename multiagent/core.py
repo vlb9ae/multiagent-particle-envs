@@ -97,6 +97,12 @@ class World(object):
         # contact response parameters
         self.contact_force = 1e+2
         self.contact_margin = 1e-3
+        
+        # Layne's limits
+        self.max_x = None
+        self.max_y = None
+        self.min_x = None
+        self.min_y = None
 
     # return all entities in the world
     @property
