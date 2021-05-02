@@ -173,14 +173,14 @@ class World(object):
                     entity.state.p_vel = entity.state.p_vel / np.sqrt(np.square(entity.state.p_vel[0]) +
                                                                   np.square(entity.state.p_vel[1])) * entity.max_speed
             entity.state.p_pos += entity.state.p_vel * self.dt
-            if self.max_x != None and entity.state.max_x > self.max_x:
-                entity.state.max_x = self.max_x
-            if self.min_x != None and entity.state.min_x < self.min_x:
-                entity.state.min_x = self.min_x
-            if self.max_y != None and entity.state.max_y > self.max_y:
-                entity.state.max_y = self.max_y
-            if self.min_y != None and entity.state.min_y < self.min_y:
-                entity.state.min_y = self.min_y
+            if self.max_x != None and entity.state.p_pos[0] > self.max_x:
+                entity.state.p_pos[0] = self.max_x
+            if self.min_x != None and entity.state.p_pos[0] < self.min_x:
+                entity.state.p_pos[0] = self.min_x
+            if self.max_y != None and entity.state.p_pos[1] > self.max_y:
+                entity.state.p_pos[1] = self.max_y
+            if self.min_y != None and entity.state.p_pos[1] < self.min_y:
+                entity.state.p_pos[1] = self.min_y
 
     def update_agent_state(self, agent):
         # set communication state (directly for now)
