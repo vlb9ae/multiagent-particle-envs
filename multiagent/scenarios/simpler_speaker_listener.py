@@ -21,8 +21,9 @@ class Scenario(BaseScenario):
             agent.size = 0.075 # I think this is irrelevant?
         # speaker
         world.agents[0].movable = False
-        # listener
+        # listener (discrete)
         world.agents[1].silent = True
+        world.agents[1].hopper = True
         # add landmarks
         world.landmarks = [Landmark() for i in range(num_landmarks)]
         for i, landmark in enumerate(world.landmarks):
