@@ -32,6 +32,8 @@ class Entity(object):
         self.size = 0.050
         # entity can move / be pushed
         self.movable = False
+        # entity hops about 1 unit at a time
+        self.hopper = False
         # entity collides with others
         self.collide = True
         # material density (affects mass)
