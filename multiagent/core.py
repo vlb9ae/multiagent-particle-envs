@@ -148,7 +148,7 @@ class World(object):
             elif agent.hopper:
                 # TODO
                 print(agent.action.u)
-                print(agent.p_pos
+                print(agent.p_pos)
         return p_force
 
     # gather physical forces acting on entities
