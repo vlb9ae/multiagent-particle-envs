@@ -141,7 +141,10 @@ class World(object):
         for i,agent in enumerate(self.agents):
             if agent.hopper:
                 p_force[i] = None
-                agent.state.p_pos += (agent.action.u / abs(agent.action.u))
+                if agent.action.u[0] != 0:
+                    agent.state.p_pos[0] += (agent.action.u[0] / abs(agent.action.u[0]))
+                if agent.action.u[1] != 0:
+                    agent.state.p_pos[1] += (agent.action.u[1] / abs(agent.action.u[1]))
                 print("DURING", agent.action.u)
                 print("AFTER", agent.state.p_pos)
                 if agent.state.p_pos[0] > self.size:
