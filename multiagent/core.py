@@ -145,7 +145,6 @@ class World(object):
             if agent.hopper:
                 p_force[i] = None
                 agent.state.p_pos += agent.action.u
-                eprint(agent.action.u)
             elif agent.movable:
                 noise = np.random.randn(*agent.action.u.shape) * agent.u_noise if agent.u_noise else 0.0
                 p_force[i] = agent.action.u + noise    
@@ -170,9 +169,10 @@ class World(object):
     def integrate_state(self, p_force):
         for i,entity in enumerate(self.entities):
             if not entity.movable: continue
-            if entity.hopper: 
-                entity.state.p_pos += entity.action.u
-                continue
+            if entity.hopper: continue
+#             if entity.hopper: 
+#                 entity.state.p_pos += entity.action.u
+#                 continue
             entity.state.p_vel = entity.state.p_vel * (1 - self.damping)
             if (p_force[i] is not None):
                 entity.state.p_vel += (p_force[i] / entity.mass) * self.dt
