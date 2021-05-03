@@ -55,11 +55,11 @@ class Scenario(BaseScenario):
         # set random initial states
         # setting to an int this time
         for agent in world.agents:
-            agent.state.p_pos = np.random.randint(-world.size,+world.size, world.dim_p)
+            agent.state.p_pos = np.random.randint(-world.size,+world.size, world.dim_p).astype(float)
             agent.state.p_vel = np.zeros(world.dim_p)
             agent.state.c = np.zeros(world.dim_c)
         for i, landmark in enumerate(world.landmarks):
-            landmark.state.p_pos = np.random.randint(-world.size,+world.size, world.dim_p)
+            landmark.state.p_pos = np.random.randint(-world.size,+world.size, world.dim_p).astype(float)
             landmark.state.p_vel = np.zeros(world.dim_p)
 
     def benchmark_data(self, agent, world):
