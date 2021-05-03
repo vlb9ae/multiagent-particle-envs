@@ -145,7 +145,7 @@ class World(object):
             if agent.hopper:
                 p_force[i] = None
                 agent.state.p_pos += agent.action.u
-                print(agent.action.u)
+                eprint(agent.action.u)
             elif agent.movable:
                 noise = np.random.randn(*agent.action.u.shape) * agent.u_noise if agent.u_noise else 0.0
                 p_force[i] = agent.action.u + noise    
