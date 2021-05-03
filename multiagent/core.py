@@ -145,8 +145,6 @@ class World(object):
                     agent.state.p_pos[0] += (agent.action.u[0] / abs(agent.action.u[0]))
                 if agent.action.u[1] != 0:
                     agent.state.p_pos[1] += (agent.action.u[1] / abs(agent.action.u[1]))
-                print("DURING", agent.action.u)
-                print("AFTER", agent.state.p_pos)
                 if agent.state.p_pos[0] > self.size:
                     agent.state.p_pos[0] = self.size
                 elif agent.state.p_pos[0] < -self.size:
