@@ -7,7 +7,7 @@ class Scenario(BaseScenario):
         world = World()
         # set any world properties first
         world.dim_c = 3
-        num_landmarks = 6
+        num_landmarks = 4
         world.collaborative = True
         
         # this will be the furthest any agent can move in any direction
@@ -51,8 +51,8 @@ class Scenario(BaseScenario):
         world.landmarks[1].color = np.array([0.15,0.65,0.15]) # green
         world.landmarks[2].color = np.array([0.15,0.15,0.65]) # blue
         world.landmarks[3].color = np.array([0.15, 0.65, 0.65]) # cyan
-        world.landmarks[4].color = np.array([0.65, 0.15, 0.65]) # magenta
-        world.landmarks[5].color = np.array([0.65, 0.65, 0.15]) # yellow
+        # world.landmarks[4].color = np.array([0.65, 0.15, 0.65]) # magenta
+        # world.landmarks[5].color = np.array([0.65, 0.65, 0.15]) # yellow
         # special colors for goals
         world.agents[0].goal_a.color = world.agents[0].goal_b.color + np.array([0.45, 0.45, 0.45])
         # set random initial states
